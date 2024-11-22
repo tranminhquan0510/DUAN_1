@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* body {
+    line-height: 1.6;
+    color: #333;
+} */
+
+.hero {
+    background-image: url('./img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    color: #fff;
+    padding: 130px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section About chiếm toàn bộ màn hình ngang */
+#about {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    gap: 20px;
+}
+
+#about .about-text {
+    flex: 2;
+    padding: 0 20px;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#about p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+#about .about-button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#about .about-button:hover {
+    background-color: #555;
+}
+
+#about .about-image {
+    flex: 1;
+    padding: 0 20px;
+}
+
+#about img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+#IdeaS {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+#IdeaS .IdeaS-image {
+    order: 1; /* Đảm bảo hình ảnh bên trái */
+    flex: 1;
+    padding: 0 20px;
+}
+
+#IdeaS .IdeaS-text {
+    order: 2; /* Đảm bảo văn bản bên phải */
+    flex: 2;
+    padding: 0 20px;
+    text-align: left;
+}
+
+#IdeaS img {
+    width: 100%;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+#IdeaS h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#IdeaS p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+#IdeaS .about-button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+

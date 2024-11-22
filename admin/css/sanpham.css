@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.main-content {
+  width: 95%;
+  margin: 20px auto;
+}
+/* icon tk đăng xuất */
+.account-menu {
+  position: absolute;
+  top: 30px; /* Điều chỉnh vị trí theo nhu cầu */
+  right: 60px; /* Đặt biểu tượng tài khoản sang bên phải */
+  display: inline-block;
+}
+
+.account-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+  margin-top: 2px; /* Thêm khoảng cách giữa biểu tượng và menu */
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#searchProduct {
+  width: 20%;
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn__thongke {
+  background-color: #00332d;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #00332d;
+}
+
+.btn__thongke:hover {
+  background-color: white;
+  color: #00332d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #00332d;
+  color: white;
+}
+
+.filter {
+  margin: 1rem 0;
+}
+
+label {
+  margin-right: 0.5rem;
+}

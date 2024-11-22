@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm</title>
+    <link rel="stylesheet" href="../css/phone.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="user.html">Quản Lý Khách Hàng</a>
+        <a href="phone.html">Quản lý Sản phẩm</a>
+        <a href="donhang.html">Quản lý Đơn hàng</a>
+        <a href="sanpham.html">Thống Kê Sản Phẩm</a>
+        <a href="donhang.html">Thống Kê Doanh Thu</a>
+    </div>
+    
+    <!-- Thêm icon tài khoản và menu đổ xuống nằm bên ngoài thanh navbar -->
+    <div class="account-menu">
+        <a href="#" class="account-icon">
+            <img src="../icon.png" alt="Admin" /> <!-- Thay thế bằng đường dẫn ảnh icon của bạn -->
+        </a>
+        <div class="dropdown-content">
+            <!-- <a href="profile.html">Thông tin cá nhân</a> -->
+            <a href="#">Đăng xuất</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Quản lý Sản phẩm</h1>
+
+        <h2>Thêm/Cập nhật sản phẩm</h2>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="phone_id">ID sản phẩm:</label>
+                <input type="text" id="phone_id" name="phone_id" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="thuonghieu">Thương hiệu:</label>
+                <input type="text" id="thuonghieu" name="thuonghieu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gia">Giá:</label>
+                <input type="number" id="gia" name="gia" required step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="soluong">Số lượng:</label>
+                <input type="number" id="soluong" name="soluong" required>
+            </div>
+
+            <div class="form-group">
+                <label for="thongso">Thông số:</label>
+                <textarea id="thongso" name="thongso" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="ncc_id">ID Nhà cung cấp:</label>
+                <input type="text" id="ncc_id" name="ncc_id">
+            </div>
+
+            <div class="form-group">
+                <label for="image">URL Hình ảnh:</label>
+                <input type="text" id="image" name="image" required>
+            </div>
+
+            <button type="submit" class="update-button">Cập nhật sản phẩm</button>
+            <button type="submit">Thêm sản phẩm</button>
+        </div>
+
+        <h2>Danh sách Sản phẩm</h2>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+            <select id="brand_filter">
+                <option value="">Tất cả</option>
+                <option value="Sweater">Sweater</option>
+                <option value="Áo giữ nhiệt">Áo giữ nhiệt</option>
+                <option value="Quần dài">Quần dài</option>
+            </select>
+            <button onclick="filterProducts()">Tìm kiếm</button>
+        </div>
+
+        <table id="product_table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Thương hiệu</th>
+                    <th>Model</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thông số</th>
+                    <th>ID Nhà cung cấp</th>
+                    <th>Hình ảnh</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sản phẩm sẽ được hiển thị tại đây -->
+                <!-- Ví dụ mẫu -->
+                <tr>
+                    <td>001</td>
+                    <td>Áo giữ nhiệt</td>
+                    <td>Áo phao dày Ultrawarm Puffer có mũ</td>
+                    <td>790.000đ</td>
+                    <td>10</td>
+                    <td>Chât vãi dầy, áo nhiều size</td>
+                    <td>NCC001</td>
+                    <td>
+                        <input type="file" id="file_input" class="hidden-input" accept="image/*">
+                        <img src="../../img/24CMCW.HD001_-DEN_10.webp" alt="Áo giữ nhiệt" id="product_image"
+                            style="width: 50px; cursor: pointer;">
+                    </td>
+                    <td class="action-buttons">
+                        <button class="edit-button">Sửa</button>
+                        <button class="delete-button">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Áo giữ nhiệt</td>
+                    <td>Áo phao dày Ultrawarm Puffer có mũ</td>
+                    <td>699.000đ</td>
+                    <td>15</td>
+                    <td>Chât vãi dầy, áo nhiều size</td>
+                    <td>NCC002</td>
+                    <td>
+                        <input type="file" id="file_input_xiaomi" class="hidden-input" accept="image/*">
+                        <img src="../../img/24CMCW.KM005_-_Navy_1.webp" alt="Áo giữ nhiệt" id="product_image_xiaomi"
+                            style="width: 50px; cursor: pointer;">
+                    </td>
+                    <td class="action-buttons">
+                        <button class="edit-button">Sửa</button>
+                        <button class="delete-button">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Áo giữ nhiệt</td>
+                    <td>Áo phao dày Ultrawarm Puffer có mũ</td>
+                    <td>799.000đ</td>
+                    <td>20</td>
+                    <td>Chât vãi dầy, áo nhiều size</td>
+                    <td>NCC003</td>
+                    <td>
+                        <input type="file" id="file_input_samsung" class="hidden-input" accept="image/*">
+                        <img src="../../img/24CMCW.TN001_-_Den_2.webp" alt="Áo giữ nhiệt" id="product_image_samsung"
+                            style="width: 50px; cursor: pointer;">
+                    </td>
+                    <td class="action-buttons">
+                        <button class="edit-button">Sửa</button>
+                        <button class="delete-button">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('product_image').addEventListener('click', function () {
+            document.getElementById('file_input').click();
+        });
+
+        document.getElementById('product_image_xiaomi').addEventListener('click', function () {
+            document.getElementById('file_input_xiaomi').click();
+        });
+
+        document.getElementById('product_image_samsung').addEventListener('click', function () {
+            document.getElementById('file_input_samsung').click();
+        });
+
+        document.getElementById('file_input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('product_image').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('file_input_xiaomi').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('product_image_xiaomi').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('file_input_samsung').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('product_image_samsung').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function filterProducts() {
+            const filter = document.getElementById('brand_filter').value.toLowerCase();
+            const rows = document.querySelectorAll('#product_table tbody tr');
+
+            rows.forEach(row => {
+                const brand = row.cells[1].textContent.toLowerCase();
+                if (filter === "" || brand.includes(filter)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
